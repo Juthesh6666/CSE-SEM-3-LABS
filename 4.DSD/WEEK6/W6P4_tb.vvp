@@ -1,0 +1,109 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 9;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x55b1fe789d90 .scope module, "W6P4_tb" "W6P4_tb" 2 3;
+ .timescale -9 -9;
+v0x55b1fe7db640_0 .net "f", 0 0, L_0x55b1fe7dc100;  1 drivers
+v0x55b1fe7db6e0_0 .var "i", 3 0;
+v0x55b1fe7db7b0_0 .var "s", 1 0;
+S_0x55b1fe789f20 .scope module, "f1" "fourtoone" 2 8, 3 1 0, S_0x55b1fe789d90;
+ .timescale -9 -9;
+    .port_info 0 /INPUT 4 "i";
+    .port_info 1 /INPUT 2 "s";
+    .port_info 2 /OUTPUT 1 "f";
+v0x55b1fe7dac00_0 .net *"_ivl_1", 1 0, L_0x55b1fe7db8b0;  1 drivers
+v0x55b1fe7dad00_0 .net *"_ivl_12", 1 0, L_0x55b1fe7dbed0;  1 drivers
+v0x55b1fe7dade0_0 .net *"_ivl_15", 0 0, L_0x55b1fe7dc010;  1 drivers
+v0x55b1fe7daed0_0 .net *"_ivl_3", 0 0, L_0x55b1fe7db980;  1 drivers
+v0x55b1fe7dafb0_0 .net *"_ivl_7", 1 0, L_0x55b1fe7dbbb0;  1 drivers
+v0x55b1fe7db0e0_0 .net *"_ivl_9", 0 0, L_0x55b1fe7dbc80;  1 drivers
+v0x55b1fe7db1c0_0 .net "c1", 0 0, L_0x55b1fe7dba70;  1 drivers
+v0x55b1fe7db280_0 .net "c2", 0 0, L_0x55b1fe7dbd20;  1 drivers
+v0x55b1fe7db340_0 .net "f", 0 0, L_0x55b1fe7dc100;  alias, 1 drivers
+v0x55b1fe7db400_0 .net "i", 3 0, v0x55b1fe7db6e0_0;  1 drivers
+v0x55b1fe7db4e0_0 .net "s", 1 0, v0x55b1fe7db7b0_0;  1 drivers
+L_0x55b1fe7db8b0 .part v0x55b1fe7db6e0_0, 0, 2;
+L_0x55b1fe7db980 .part v0x55b1fe7db7b0_0, 0, 1;
+L_0x55b1fe7dba70 .ufunc/vec4 TD_W6P4_tb.f1.twotoone, 1, L_0x55b1fe7db8b0, L_0x55b1fe7db980 (v0x55b1fe7c4f80_0, v0x55b1fe7daaa0_0) S_0x55b1fe7c4da0;
+L_0x55b1fe7dbbb0 .part v0x55b1fe7db6e0_0, 2, 2;
+L_0x55b1fe7dbc80 .part v0x55b1fe7db7b0_0, 0, 1;
+L_0x55b1fe7dbd20 .ufunc/vec4 TD_W6P4_tb.f1.twotoone, 1, L_0x55b1fe7dbbb0, L_0x55b1fe7dbc80 (v0x55b1fe7c4f80_0, v0x55b1fe7daaa0_0) S_0x55b1fe7c4da0;
+L_0x55b1fe7dbed0 .concat [ 1 1 0 0], L_0x55b1fe7dba70, L_0x55b1fe7dbd20;
+L_0x55b1fe7dc010 .part v0x55b1fe7db7b0_0, 1, 1;
+L_0x55b1fe7dc100 .ufunc/vec4 TD_W6P4_tb.f1.twotoone, 1, L_0x55b1fe7dbed0, L_0x55b1fe7dc010 (v0x55b1fe7c4f80_0, v0x55b1fe7daaa0_0) S_0x55b1fe7c4da0;
+S_0x55b1fe7c4da0 .scope function.vec4.s1, "twotoone" "twotoone" 3 6, 3 6 0, S_0x55b1fe789f20;
+ .timescale -9 -9;
+v0x55b1fe7c4f80_0 .var "a", 1 0;
+v0x55b1fe7daaa0_0 .var "s", 0 0;
+; Variable twotoone is vec4 return value of scope S_0x55b1fe7c4da0
+TD_W6P4_tb.f1.twotoone ;
+    %load/vec4 v0x55b1fe7daaa0_0;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 1;
+    %cmp/u;
+    %jmp/1 T_0.0, 6;
+    %dup/vec4;
+    %pushi/vec4 1, 0, 1;
+    %cmp/u;
+    %jmp/1 T_0.1, 6;
+    %jmp T_0.2;
+T_0.0 ;
+    %load/vec4 v0x55b1fe7c4f80_0;
+    %parti/s 1, 0, 2;
+    %ret/vec4 0, 0, 1;  Assign to twotoone (store_vec4_to_lval)
+    %jmp T_0.2;
+T_0.1 ;
+    %load/vec4 v0x55b1fe7c4f80_0;
+    %parti/s 1, 1, 2;
+    %ret/vec4 0, 0, 1;  Assign to twotoone (store_vec4_to_lval)
+    %jmp T_0.2;
+T_0.2 ;
+    %pop/vec4 1;
+    %end;
+    .scope S_0x55b1fe789d90;
+T_1 ;
+    %vpi_call 2 11 "$dumpfile", "W6P4_tb.vcd" {0 0 0};
+    %vpi_call 2 12 "$dumpvars", 32'sb00000000000000000000000000000000, S_0x55b1fe789d90 {0 0 0};
+    %pushi/vec4 5, 0, 4;
+    %store/vec4 v0x55b1fe7db6e0_0, 0, 4;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x55b1fe7db7b0_0, 0, 2;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x55b1fe7db7b0_0, 0, 2;
+    %delay 20, 0;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0x55b1fe7db7b0_0, 0, 2;
+    %delay 20, 0;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v0x55b1fe7db7b0_0, 0, 2;
+    %delay 20, 0;
+    %pushi/vec4 6, 0, 4;
+    %store/vec4 v0x55b1fe7db6e0_0, 0, 4;
+    %pushi/vec4 0, 0, 2;
+    %store/vec4 v0x55b1fe7db7b0_0, 0, 2;
+    %delay 20, 0;
+    %pushi/vec4 1, 0, 2;
+    %store/vec4 v0x55b1fe7db7b0_0, 0, 2;
+    %delay 20, 0;
+    %pushi/vec4 2, 0, 2;
+    %store/vec4 v0x55b1fe7db7b0_0, 0, 2;
+    %delay 20, 0;
+    %pushi/vec4 3, 0, 2;
+    %store/vec4 v0x55b1fe7db7b0_0, 0, 2;
+    %delay 20, 0;
+    %vpi_call 2 26 "$display", "Test Complete" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "W6P4_tb.v";
+    "./W6P4.v";
