@@ -1,0 +1,20 @@
+`timescale 1ns/1ns
+`include "W9P2.v"
+module W9P2_tb();
+reg [3:0]i;
+reg En;
+wire f,g,h;
+integer j;
+W9P2 f1(i,f,g,h,En);
+initial
+begin
+$dumpfile("W9P2_tb.vcd");
+$dumpvars(0,W9P2_tb);
+En=1'b1;
+for(j=0;j<16;j=j+1)
+begin
+i=j; #20;
+end
+$display("Test Complete");
+end
+endmodule
