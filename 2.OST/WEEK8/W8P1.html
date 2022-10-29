@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>W8P1 </title>
+ <style type="text/css">
+ *{
+ text-align: left;
+ }
+ </style>
+</head>
+<body>
+ <canvas id="myCanvas" width="200" height="300">
+ <script type="text/javascript">
+ var c = document.getElementById("myCanvas");
+ var ctx = c.getContext("2d");
+ ctx.fillStyle = "red";
+ ctx.fillRect(20, 20, 125, 200);
+ var d = document.getElementById("myCanvas");
+ var dtx = d.getContext("2d");
+ dtx.fillStyle = "blue";
+ ctx.rotate(40 * Math.PI / 180);
+ dtx.fillRect(100, -20, 125, 200);
+ </script>
+</canvas>
+</body>
+</html>

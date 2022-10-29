@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>W8P2</title>
+</head>
+<body>
+ <script>
+ var sum = 0;
+ var num = prompt("Enter number of elements ");
+ var arr = Array();
+ var n;
+ var product = 1;
+ for(var i = 0; i < num; i = i + 1){
+ n = prompt("Enter number " + (i+1) + " : ");
+ sum += parseInt(n);
+ product *= n;
+ }
+ alert("Sum is " + sum +", Product is " + product);
+ </script>
+</body>
+</html>

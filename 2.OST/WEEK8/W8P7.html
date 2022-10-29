@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>W8P7</title>
+</head>
+<body>
+<script type="text/javascript">
+ function calc() {
+ var sum=0;
+ for (var i = 1; i <= 4; i++) {
+ sum += parseInt(document.getElementById('m'+i).value);
+ }
+ var avg = sum/4;
+ var grade = "";
+ if (avg < 60) grade = 'Fail';
+ else if (avg < 70 && avg > 60) grade = 'D';
+ else if (avg < 80 && avg > 70) grade = 'C';
+ else if (avg < 90 && avg > 80) grade = 'B';
+ else grade = 'A';
+ alert('The Grade is : '+ grade );
+ }
+</script>
+Enter marks in subject Maths: <input type="text" name="m1" id="m1"><br>
+Enter marks in subject COA: <input type="text" name="m2" id="m2"><br>
+Enter marks in subject DSD: <input type="text" name="m3" id="m3"><br>
+Enter marks in subject DSA: <input type="text" name="m4" id="m4"><br>
+<button onclick="calc()">Calculate</button>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>W8P10</title>
+</head>
+<body>
+ <h1 style = "text-align: left;">Online Quiz</h1>
+ <script type="text/javascript">
+ function calculate_score() {
+ var score = 0;
+if (document.getElementById("q12").checked)
+score += 1;
+if (document.getElementById("q22").checked)
+score += 1;
+if (document.getElementById("q31").checked)
+score += 1;
+document.getElementById('Score').innerHTML = " "+score;
+}
+</script>
+What is 3+3*2 ? <br>
+<input type="radio" name="q1" id="q11">12<br>
+<input type="radio" name="q1" id="q12">9<br>
+<input type="radio" name="q1" id="q13">8<br><br>
+What is 5%6 ? <br>
+<input type="radio" name="q2" id="q21">0<br>
+<input type="radio" name="q2" id="q22">5<br>
+<input type="radio" name="q2" id="q23">6<br><br>
+What is color of the sky during day?<br>
+<input type="radio" name="q3" id="q31">Blue<br>
+<input type="radio" name="q3" id="q32">White<br>
+<input type="radio" name="q3" id="q33">Black<br><br>
+<button onclick="calculate_score()">Submit</button><br><hr>
+<b>Score:</b>
+<span id="Score"></span>
+</body>
+</html>

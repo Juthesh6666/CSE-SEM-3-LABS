@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>W8P3</title>
+</head>
+<body>
+<script type="text/javascript">
+ var a = parseInt(prompt("Enter first number :"));
+ var b = parseInt(prompt("Enter second number :"));
+ var c = parseInt(prompt("Enter third number :"));
+ if(a > b){
+ if(a > c){
+ max = a;
+ }
+ else{
+ max = c;
+ }
+ }
+ else if( b > a){
+ if(b > c){
+ max = b;
+ }
+ else{
+ max = c;
+ }
+ }
+ alert("Max is " + max);
+ if(a > b && c > b){
+ min = b;
+ }
+ else if(b > a && c > a){
+ min = a;
+ }
+ else{
+ min = c;
+ }
+ alert("Min is " + min);
+ </script>
+</body>
+</html>
